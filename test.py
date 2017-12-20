@@ -103,7 +103,90 @@ log("test  log")
 
 
 #math 模块
+import math
 log(dir(math))
+
+#系统模块
+import sys
+log(dir(sys))
+import os
+log(dir(os))
+
+#内置模块(不用import就可以直接使用)常用内置函数：
+#help(obj) 在线帮助, obj可是任何类型    
+#callable(obj) 查看一个obj是不是可以像函数一样调用    
+#repr(obj) 得到obj的表示字符串，可以利用这个字符串eval重建该对象的一个拷贝    
+#eval_r(str) 表示合法的python表达式，返回这个表达式    
+#dir(obj) 查看obj的name space中可见的name    
+#hasattr(obj,name) 查看一个obj的name space中是否有name    
+#getattr(obj,name) 得到一个obj的name space中的一个name    
+#setattr(obj,name,value) 为一个obj的name   
+#space中的一个name指向vale这个object    
+#delattr(obj,name) 从obj的name space中删除一个name    
+#vars(obj) 返回一个object的name space。用dictionary表示    
+#locals() 返回一个局部name space,用dictionary表示    
+#globals() 返回一个全局name space,用dictionary表示    
+#type(obj) 查看一个obj的类型    
+#isinstance(obj,cls) 查看obj是不是cls的instance    
+#issubclass(subcls,supcls) 查看subcls是不是supcls的子类  
+
+##################    类型转换  ##################
+
+#chr(i) 把一个ASCII数值,变成字符    
+#ord(i) 把一个字符或者unicode字符,变成ASCII数值    
+#oct(x) 把整数x变成八进制表示的字符串    
+#hex(x) 把整数x变成十六进制表示的字符串    
+#str(obj) 得到obj的字符串描述    
+#list(seq) 把一个sequence转换成一个list    
+#tuple(seq) 把一个sequence转换成一个tuple    
+#dict(),dict(list) 转换成一个dictionary    
+#int(x) 转换成一个integer    
+#long(x) 转换成一个long interger    
+#float(x) 转换成一个浮点数    
+#complex(x) 转换成复数    
+#max(...) 求最大值    
+#min(...) 求最小值  
+
+
+
+# import model from other python file
+from soarmodel import model1
+log(model1(5))
+
+
+
+# global globvar    # 使用 global 声明全局变量
+global age
+age = 16
+
+#文件操作
+fo = open("soarmodel.py","wb") #wb 是 访问这个文件的mode , 是只读还是读写操作
+log(fo.name)
+#下面写入一段代码
+fo.write("#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+def model1(para):
+    return 10+para
+
+def getname():
+    return soar
+
+def renamefile(file):
+    fe = open(file,"wb")
+    fe.rename(file,"gaofeitest.py")
+
+")
+fo.close()
+
+
+content = open("soarmodel.py","r+") #wb 是 访问这个文件的mode , 是只读还是读写操作
+log(content.name)
+log(content.read())
+content.close()
+
+
+
 
 
 
