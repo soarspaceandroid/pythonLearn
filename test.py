@@ -102,5 +102,8 @@ print getString("gaofei")
 log("test  log")
 
 
+#math 模块
+log(dir(math))
+
 
 
