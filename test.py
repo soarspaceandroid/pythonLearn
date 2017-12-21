@@ -150,8 +150,13 @@ log(dir(os))
 
 
 # import model from other python file
-from soarmodel import model1
-log(model1(5))
+# from soarmodel import soarmodel
+
+# log(soarmodel().model1(5))
+
+# import soarmodel
+# model = soarmodel(25)
+# log(model)
 
 
 
@@ -159,32 +164,44 @@ log(model1(5))
 global age
 age = 16
 
+#文件操作mode
+
+#r	以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。
+#rb	以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。
+#r+	打开一个文件用于读写。文件指针将会放在文件的开头。
+#rb+	以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。
+#w	打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。
+#wb	以二进制格式打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。
+#w+	打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。
+#wb+	以二进制格式打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。
+#a	打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。
+#ab	以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。
+#a+	打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。
+#ab+	以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。
+
+
 #文件操作
-fo = open("soarmodel.py","wb") #wb 是 访问这个文件的mode , 是只读还是读写操作
+fo = open("gaofeitest.py","wb") #wb 是 访问这个文件的mode , 是只读还是读写操作
 log(fo.name)
 #下面写入一段代码
-fo.write("#!/usr/bin/python
-# -*- coding: UTF-8 -*-
-
-def model1(para):
-    return 10+para
-
-def getname():
-    return soar
-
-def renamefile(file):
-    fe = open(file,"wb")
-    fe.rename(file,"gaofeitest.py")
-
-")
+fo.write("\"this is test string , can you see me ?\"")
 fo.close()
 
 
-content = open("soarmodel.py","r+") #wb 是 访问这个文件的mode , 是只读还是读写操作
-log(content.name)
+content = open("gaofeitest.py","r+") #wb 是 访问这个文件的mode , 是只读还是读写操作
 log(content.read())
 content.close()
 
+#接受键盘读写
+str  = raw_input("pls input-->")
+log(str)
+
+#异常处理
+try:
+    log(fuck)
+except NameError:
+    log("fuck is not define")
+    
 
 
 
